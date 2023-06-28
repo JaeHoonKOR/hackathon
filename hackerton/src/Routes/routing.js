@@ -5,16 +5,9 @@ import LoginPage from "../Pages/Landing/Form/loginPage";
 import SignUpPage from "../Pages/Landing/Form/signUpPage";
 import TestPage from "../Pages/UserTest";
 import ErrorPage from "../Pages/Error";
+import LayOut from "../Components/Layout";
 
 const router = createBrowserRouter([
-  {
-    path: "",
-    element: <LandingPage />,
-  },
-  {
-    path: "test",
-    element: <TestPage />,
-  },
   {
     path: "form/login",
     element: <LoginPage />,
@@ -22,6 +15,19 @@ const router = createBrowserRouter([
   {
     path: "form/signup",
     element: <SignUpPage />,
+  },
+  {
+    element: <LayOut />,
+    children: [
+      {
+        path: "",
+        element: <LandingPage />,
+      },
+      {
+        path: "test",
+        element: <TestPage />,
+      },
+    ],
   },
 
   // {
