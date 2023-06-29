@@ -17,7 +17,7 @@ const Header = () => {
 export default Header;
 
 const Wrapper = styled.div`
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

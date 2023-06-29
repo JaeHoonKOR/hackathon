@@ -5,13 +5,11 @@ import { faArrowRight, faPowerOff } from "@fortawesome/free-solid-svg-icons";
 const LandingPage = () => {
   const navigate = useNavigate();
   const goTest = () => {
-    navigate("test");
-    console.log("1");
+    navigate("test/0");
   };
 
   const goLogin = () => {
     navigate("form/login");
-    console.log("1");
   };
   return (
     <S.Wrapper>
@@ -52,14 +50,13 @@ const LandingPage = () => {
 export default LandingPage;
 
 const Wrapper = styled.div`
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   display: flex;
 `;
 
 const Left = styled.div`
   width: 50%;
-  margin-top: 10px;
 `;
 
 const Title = styled.div`
@@ -101,8 +98,6 @@ const LoginBtn = styled.div`
 
 const Right = styled.div`
   width: 50%;
-
-  margin-top: 10px;
 `;
 const PhotoWrapper = styled.div`
   width: 200px;
@@ -131,7 +126,7 @@ const UpperText = styled.div`
   padding: 15px;
   border: none;
   margin-bottom: 10px;
-  margin-left: 230px;
+  margin-left: 160px;
   justify-content: space-between;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   color: #407bf0;
