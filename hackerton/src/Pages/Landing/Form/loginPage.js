@@ -13,18 +13,30 @@ const LoginPage = () => {
       await MemberApi.logIn({ email, password });
       navigate("/main");
     } catch (err) {
-      console.log(err);
+      alert(`${err.response.data.message}`);
+      e.target.elements.id.value = "";
+      e.target.elements.pw.value = "";
     }
   };
 
-  return (
-    <S.Wrapper onSubmit={onClickLogin}>
-      <S.Title>회원가입</S.Title>
-      <S.ID type="text" placeholder="이메일" name="id"></S.ID>
-      <S.PW type="password" placeholder="비밀번호" name="pw"></S.PW>
+  const goSignUp = () => {
+    navigate("/form/signup");
+  };
 
-      <S.LogIn>완료</S.LogIn>
-    </S.Wrapper>
+  return (
+    <>
+      <S.Wrapper onSubmit={onClickLogin}>
+        <S.Form>
+          <S.Title>로그인</S.Title>
+          <S.ID type="text" placeholder="이메일" name="id"></S.ID>
+          <S.PW type="password" placeholder="비밀번호" name="pw"></S.PW>
+          <S.LogIn>완료</S.LogIn>
+        </S.Form>
+        <S.SignUp onClick={goSignUp}>
+          계정이 아직 없으시다면 ?<S.BoldWord>회원가입</S.BoldWord>
+        </S.SignUp>
+      </S.Wrapper>
+    </>
   );
 };
 
@@ -39,6 +51,7 @@ const Wrapper = styled.form`
   align-items: center;
   border: 1px solid #407bf0;
   border-radius: 60px;
+  background-color: #fafaff;
 `;
 
 const Title = styled.div`
@@ -50,7 +63,7 @@ const Title = styled.div`
 `;
 
 const Form = styled.div`
-  border: 1px solid red;
+  display: flex;
   flex-direction: column;
   align-items: center;
 `;
@@ -73,16 +86,6 @@ const PW = styled.input`
   margin-top: 10px;
 `;
 
-const PWConfirm = styled.input`
-  width: 300px;
-  height: 25px;
-  border-radius: 30px;
-  padding: 5px;
-  border: 1px solid #799edc;
-  margin-top: 10px;
-`;
-const goBack = styled.div``;
-
 const LogIn = styled.button`
   cursor: pointer;
   border: none;
@@ -90,16 +93,24 @@ const LogIn = styled.button`
   height: 35px;
   background-color: #799edc;
   border-radius: 15px;
-  margin-top: 10px;
+  margin-top: 20px;
 `;
-
+const SignUp = styled.div`
+  display: flex;
+  color: #3a76ef;
+  margin-top: 20px;
+  cursor: pointer;
+`;
+const BoldWord = styled.div`
+  font-weight: 800;
+`;
 const S = {
   Wrapper,
   Title,
   Form,
   ID,
   PW,
-  PWConfirm,
-  goBack,
   LogIn,
+  SignUp,
+  BoldWord,
 };

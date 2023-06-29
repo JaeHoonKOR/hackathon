@@ -9,10 +9,18 @@ const Right = () => {
         </S.PhotoWrapper>
         <S.ButtonWrapper>
           <S.Title>주식 추천</S.Title>
-          <S.Description>주식이 어려운 주린이들을 위한</S.Description>
+          <S.Description>관심 카테고리별 주식 추천</S.Description>
         </S.ButtonWrapper>
       </S.Recommend>
-      <S.Rising></S.Rising>
+      <S.Rising>
+        <S.PhotoWrapper>
+          <S.Photo src="" />
+        </S.PhotoWrapper>
+        <S.ButtonWrapper>
+          <S.Title>주식 사전</S.Title>
+          <S.Description>모르는 게 많은 주린이들을 위한</S.Description>
+        </S.ButtonWrapper>
+      </S.Rising>
     </S.Wrapper>
   );
 };
@@ -53,7 +61,7 @@ const ButtonWrapper = styled.div`
   margin-top: 30px;
 `;
 const Title = styled.div`
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 800;
 `;
 const Description = styled.div`

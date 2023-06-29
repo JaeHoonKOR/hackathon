@@ -47,6 +47,7 @@ const Wrapper = styled.form`
   align-items: center;
   border: 1px solid #407bf0;
   border-radius: 60px;
+  background-color: #fafaff;
 `;
 
 const Title = styled.div`

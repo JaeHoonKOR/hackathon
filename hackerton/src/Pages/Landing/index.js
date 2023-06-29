@@ -15,11 +15,10 @@ const LandingPage = () => {
     <S.Wrapper>
       <S.Left>
         <S.Title>ZBTI 테스트</S.Title>
-        <S.Description>
-          나의 투자 성향을 파악하고<br></br>
-          투자 성향에 따른 주식 상품 추천<br></br>
-          나와 같은 성향의 유명 투자자 찾기.
-        </S.Description>
+        <S.Description1>나의 투자 성향을 파악하고 </S.Description1>
+        <S.Description2> 투자 성향에 따른 주식 상품 추천</S.Description2>
+        <S.Description3> 나와 같은 성향의 유명 투자자 찾기.</S.Description3>
+
         <S.TestBtn onClick={goTest}>
           <div>내 ZBTI 테스트 하러 가기</div>
           <FontAwesomeIcon icon={faArrowRight} />
@@ -50,7 +49,7 @@ const LandingPage = () => {
 export default LandingPage;
 
 const Wrapper = styled.div`
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
 `;
@@ -61,16 +60,29 @@ const Left = styled.div`
 
 const Title = styled.div`
   margin-top: 10px;
-  font-size: 36px;
+  font-size: 80px;
   color: #5a70e0;
   font-weight: 800;
 `;
 
-const Description = styled.div`
+const Description1 = styled.div`
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 30px;
   color: #407bf0;
-  margin-bottom: 70px;
+  opacity: 0.7;
+`;
+const Description2 = styled.div`
+  margin-top: 10px;
+  font-size: 30px;
+  color: #407bf0;
+  opacity: 0.4;
+`;
+const Description3 = styled.div`
+  margin-top: 10px;
+  font-size: 30px;
+  color: #407bf0;
+  margin-bottom: 50px;
+  opacity: 0.2;
 `;
 const TestBtn = styled.div`
   width: 300px;
@@ -83,7 +95,7 @@ const TestBtn = styled.div`
   padding: 15px;
   justify-content: space-between;
   margin-bottom: 20px;
-  padding-left: 20px;
+  padding-left: 40px;
 `;
 const LoginBtn = styled.div`
   width: 300px;
@@ -95,17 +107,17 @@ const LoginBtn = styled.div`
   margin-top: 10px;
   justify-content: space-between;
   color: #407bf0;
-  padding-left: 20px;
+  padding-left: 40px;
 `;
 
 const Right = styled.div`
   width: 50%;
 `;
 const PhotoWrapper = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   outline: 1px solid #5a70e0;
-  border-radius: 200px;
+  border-radius: 250px;
   margin: 0 auto;
 
   overflow: hidden;
@@ -118,7 +130,7 @@ const Photo = styled.img`
 `;
 
 const TextPart = styled.div`
-  margin-top: 20px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -134,7 +146,7 @@ const UpperText = styled.div`
   margin-bottom: 10px;
   margin-left: 160px;
   justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   color: #407bf0;
   div {
     margin: 0 auto;
@@ -149,7 +161,7 @@ const DownText = styled.div`
   border: none;
   margin-top: 10px;
   justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   background-color: #c4ccf4;
   color: white;
   div {
@@ -161,7 +173,9 @@ const S = {
   Wrapper,
   Left,
   Title,
-  Description,
+  Description1,
+  Description2,
+  Description3,
   TestBtn,
   LoginBtn,
   Right,

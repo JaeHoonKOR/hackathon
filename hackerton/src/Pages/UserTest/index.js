@@ -3,28 +3,37 @@ import { styled } from "styled-components";
 import Intro from "./Intro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import FirstTest from "./Tests/firstTest";
-import SecondTest from "./Tests/secondTest";
-import ThirdTest from "./Tests/thirdTest";
-import FourthTest from "./Tests/fourthTest";
+
+import Test from "./Tests/test1";
+import { useEffect, useState } from "react";
+import Test2 from "./Tests/test2";
+import Test3 from "./Tests/test3";
+import Test4 from "./Tests/test4";
+import Test5 from "./Tests/test5";
+import Test6 from "./Tests/test6";
+import { arrayState } from "../Atom/atom";
+import { useRecoilState } from "recoil";
 
 const TestPage = () => {
+  const [data, setData] = useState();
   const { page } = useParams();
-  console.log(page);
-
+  const pageNum = Number(page);
   const navigate = useNavigate();
-
   const onClickNext = () => {
-    console.log("!");
-    navigate(`/test/${Number(page) + 1}`);
+    navigate(`/test/${pageNum + 1}`);
   };
+  const [array, setArray] = useRecoilState(arrayState);
   return (
     <S.Wrapper>
-      {page == 0 && <Intro />}
-      {page == 1 && <FirstTest />}
-      {page == 2 && <SecondTest />}
-      {page == 3 && <ThirdTest />}
-      {page == 4 && <FourthTest />}
+      {pageNum === 0 && <Intro />}
+      {pageNum === 1 && <Test setArray={setArray} />}
+      {pageNum === 2 && <Test2 setArray={setArray} />}
+      {pageNum === 3 && <Test3 setArray={setArray} />}
+      {pageNum === 4 && <Test4 setArray={setArray} />}
+      {pageNum === 5 && <Test5 setArray={setArray} />}
+      {pageNum === 6 && <Test6 setArray={setArray} />}
+
+      {data && pageNum === 8 && <Test />}
       {page != 0 && (
         <S.NextPageBtn onClick={onClickNext}>
           <S.BtnWord>다음 단계로 이동</S.BtnWord>
@@ -38,13 +47,14 @@ const TestPage = () => {
 export default TestPage;
 
 const Wrapper = styled.div`
-  width: 70%;
+  width: 80%;
   height: 450px;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 30px;
   border: 1px solid #407bf0;
   border-radius: 60px;
   justify-content: center;
+  background-color: #fafaff;
 `;
 
 const NextPageBtn = styled.div`
@@ -62,6 +72,7 @@ const NextPageBtn = styled.div`
   background-color: #5a70e0;
   color: white;
   margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 `;
 
 const BtnWord = styled.div`

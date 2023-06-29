@@ -1,3 +1,13 @@
+import {
+  faArrowRightToBracket,
+  faClipboardUser,
+  faUser,
+  faUserAlt,
+  faUserCog,
+  faUserMd,
+  faUserMinus,
+  faUsersLine,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
@@ -9,14 +19,27 @@ const Header = () => {
     navigate("/main");
   };
 
+  const goMyPage = () => {
+    navigate("/my");
+  };
+  const goLogin = () => {
+    navigate("/form/login");
+  };
   return (
-    <S.Wrapper onClick={goMain}>
-      <S.Logos>
+    <S.Wrapper>
+      <S.Logos onClick={goMain}>
         <S.Logo src="/Assets/zbti.jpg" alt="로고 이미지"></S.Logo>
         <S.TextLogo src="/Assets/zbtiText.jpg" alt="로고 이미지"></S.TextLogo>
       </S.Logos>
 
-      {/* <S.MyPage to="form/login">  </S.MyPage> */}
+      <S.MyPage>
+        <S.goLogin onClick={goLogin}>
+          <FontAwesomeIcon icon={faArrowRightToBracket} />
+        </S.goLogin>
+        <div onClick={goMyPage}>
+          <FontAwesomeIcon icon={faUser} />
+        </div>
+      </S.MyPage>
     </S.Wrapper>
   );
 };
@@ -24,12 +47,12 @@ const Header = () => {
 export default Header;
 
 const Wrapper = styled.div`
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 `;
 
 const Logos = styled.div`
@@ -46,9 +69,20 @@ const TextLogo = styled.img`
   margin: auto 0;
 `;
 
-const MyPage = styled(Link)`
+const MyPage = styled.div`
   width: 60px;
-  border: 1px solid blue;
+  display: flex;
+  font-size: 20px;
+  color: #3a76ef;
+  text-align: center;
+  padding-top: 10px;
+`;
+
+const goLogin = styled.div`
+  width: 60px;
+  font-size: 20px;
+  color: #3a76ef;
+  text-align: center;
 `;
 
 const S = {
@@ -57,4 +91,5 @@ const S = {
   Logo,
   TextLogo,
   MyPage,
+  goLogin,
 };

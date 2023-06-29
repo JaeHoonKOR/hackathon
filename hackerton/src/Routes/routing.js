@@ -7,6 +7,7 @@ import TestPage from "../Pages/UserTest";
 import ErrorPage from "../Pages/Error";
 import LayOut from "../Components/Layout";
 import MainPage from "../Pages/Main";
+import MyPage from "../Pages/MyPage";
 
 const router = createBrowserRouter([
   // {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "main",
         element: <MainPage />,
+      },
+      {
+        path: "my",
+        element: <MyPage />,
       },
     ],
   },
