@@ -1,21 +1,35 @@
 import { styled } from "styled-components";
+import MemberApi from "../../../Apis/memberApi";
+import { useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
-  const onClickSignUp = (e) => {
+  const navigate = useNavigate();
+
+  const onClickSignUp = async (e) => {
     e.preventDefault();
-    const id = e.target.elements.id.value;
-    const pw = e.target.elements.pw.value;
+    const email = e.target.elements.id.value;
+    const password = e.target.elements.pw.value;
+    const name = e.target.elements.nickname.value;
+    try {
+      await MemberApi.signUp({ email, password, name });
+      navigate("/form/login");
+    } catch (err) {
+      e.target.elements.id.value = "";
+      e.target.elements.pw.value = "";
+      e.target.elements.nickname.value = "";
+      alert(`${err.response.data.message}`);
+    }
   };
 
   return (
     <S.Wrapper onSubmit={onClickSignUp}>
       <S.Title>회원가입</S.Title>
-      <S.ID type="text" placeholder="아이디" name="id"></S.ID>
+      <S.ID type="text" placeholder="이메일" name="id"></S.ID>
       <S.PW type="password" placeholder="비밀번호" name="pw"></S.PW>
       <S.PWConfirm
-        type="password"
-        placeholder="비밀번호 확인"
-        name="pwConfirm"
+        type="text"
+        placeholder="닉네임"
+        name="nickname"
       ></S.PWConfirm>
       <S.SignUp>완료</S.SignUp>
     </S.Wrapper>

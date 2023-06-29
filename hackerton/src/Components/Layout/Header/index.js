@@ -1,10 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const goMain = () => {
+    navigate("/main");
+  };
+
   return (
-    <S.Wrapper>
+    <S.Wrapper onClick={goMain}>
       <S.Logos>
         <S.Logo src="/Assets/zbti.jpg" alt="로고 이미지"></S.Logo>
         <S.TextLogo src="/Assets/zbtiText.jpg" alt="로고 이미지"></S.TextLogo>
