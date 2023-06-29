@@ -31,15 +31,15 @@ const LandingPage = () => {
       </S.Left>
       <S.Right>
         <S.PhotoWrapper>
-          <S.Photo />
+          <S.Photo src="Assets/landingWarren.png" />
         </S.PhotoWrapper>
 
         <S.TextPart>
           <S.UpperText>
-            <div>나는 어떤 주식을 사야할까🤔</div>
+            <div>나는 어떤 주식을 사야할까? 🤔</div>
           </S.UpperText>
           <S.DownText>
-            <div>내 투자 성향이 XXXX와 같다고?!🤩</div>
+            <div>내 투자 성향이 XXXX와 같다고?! 🤩</div>
           </S.DownText>
         </S.TextPart>
       </S.Right>
@@ -83,6 +83,7 @@ const TestBtn = styled.div`
   padding: 15px;
   justify-content: space-between;
   margin-bottom: 20px;
+  padding-left: 20px;
 `;
 const LoginBtn = styled.div`
   width: 300px;
@@ -94,6 +95,7 @@ const LoginBtn = styled.div`
   margin-top: 10px;
   justify-content: space-between;
   color: #407bf0;
+  padding-left: 20px;
 `;
 
 const Right = styled.div`
@@ -105,10 +107,13 @@ const PhotoWrapper = styled.div`
   outline: 1px solid #5a70e0;
   border-radius: 200px;
   margin: 0 auto;
+
+  overflow: hidden;
 `;
 const Photo = styled.img`
+  width: 100%;
+  height: 100%;
   margin-top: 10px;
-  border: 1px solid black;
   border-radius: 50px;
 `;
 
@@ -116,6 +121,7 @@ const TextPart = styled.div`
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  text-align: center;
 `;
 
 const UpperText = styled.div`
@@ -130,6 +136,9 @@ const UpperText = styled.div`
   justify-content: space-between;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   color: #407bf0;
+  div {
+    margin: 0 auto;
+  }
 `;
 const DownText = styled.div`
   width: 300px;
@@ -141,8 +150,11 @@ const DownText = styled.div`
   margin-top: 10px;
   justify-content: space-between;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  background-color: #5a70e0;
+  background-color: #c4ccf4;
   color: white;
+  div {
+    margin: 0 auto;
+  }
 `;
 
 const S = {

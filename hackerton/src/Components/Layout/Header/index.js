@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
@@ -9,7 +10,7 @@ const Header = () => {
         <S.TextLogo src="/Assets/zbtiText.jpg" alt="로고 이미지"></S.TextLogo>
       </S.Logos>
 
-      <S.MyPage to="form/login">로그인자리</S.MyPage>
+      {/* <S.MyPage to="form/login">  </S.MyPage> */}
     </S.Wrapper>
   );
 };

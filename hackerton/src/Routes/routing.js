@@ -6,6 +6,7 @@ import SignUpPage from "../Pages/Landing/Form/signUpPage";
 import TestPage from "../Pages/UserTest";
 import ErrorPage from "../Pages/Error";
 import LayOut from "../Components/Layout";
+import MainPage from "../Pages/Main";
 
 const router = createBrowserRouter([
   // {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "test/:page",
         element: <TestPage />,
+      },
+      {
+        path: "main",
+        element: <MainPage />,
       },
     ],
   },

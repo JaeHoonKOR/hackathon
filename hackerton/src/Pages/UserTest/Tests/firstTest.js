@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 const FirstTest = () => {
   return (
     <S.Wrapper>
-      <S.Title>투자 할 때, 나는 xx한 편이다</S.Title>
+      <S.Title>📈투자 할 때, 나는 XXX한 편이다 🙋🏻‍♂️</S.Title>
 
       <S.BtnWrapper>
         <S.AnswerBtn>~~한 편이다</S.AnswerBtn>
