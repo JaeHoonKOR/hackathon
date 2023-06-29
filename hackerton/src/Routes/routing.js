@@ -8,17 +8,25 @@ import ErrorPage from "../Pages/Error";
 import LayOut from "../Components/Layout";
 
 const router = createBrowserRouter([
-  {
-    path: "form/login",
-    element: <LoginPage />,
-  },
-  {
-    path: "form/signup",
-    element: <SignUpPage />,
-  },
+  // {
+  //   path: "form/login",
+  //   element: <LoginPage />,
+  // },
+  // {
+  //   path: "form/signup",
+  //   element: <SignUpPage />,
+  // },
   {
     element: <LayOut />,
     children: [
+      {
+        path: "form/login",
+        element: <LoginPage />,
+      },
+      {
+        path: "form/signup",
+        element: <SignUpPage />,
+      },
       {
         path: "",
         element: <LandingPage />,
