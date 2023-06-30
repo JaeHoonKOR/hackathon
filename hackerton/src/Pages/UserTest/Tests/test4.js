@@ -48,20 +48,20 @@ const Test4 = ({ setArray }) => {
           <S.Title> 나는 어떤 성향일까? 🧐</S.Title>
           <S.Container>
             <S.QuestionWrapper>{data && data[0]?.question}</S.QuestionWrapper>
-            <S.BtnWrapper>
-              <S.AnswerBtn1
+            <S.BtnWrapperLong>
+              <S.AnswerBtn1Long
                 clicked={clickedBtns[0]}
                 onClick={() => clickBtn1(12)}
               >
                 {data[0]?.answer1}
-              </S.AnswerBtn1>
-              <S.AnswerBtn2
+              </S.AnswerBtn1Long>
+              <S.AnswerBtn2Long
                 clicked={clickedBtns[4]}
                 onClick={() => clickBtn2(12)}
               >
                 {data[0]?.answer2}
-              </S.AnswerBtn2>
-            </S.BtnWrapper>
+              </S.AnswerBtn2Long>
+            </S.BtnWrapperLong>
           </S.Container>
           <S.Container>
             <S.QuestionWrapper>{data[1]?.question}</S.QuestionWrapper>
@@ -198,7 +198,6 @@ const AnswerBtn1Long = styled.button`
   height: 35px;
   font-size: 12px;
   margin: auto 10px;
-  margin-right: 20px;
   border: 1px solid #799edc;
   border-radius: 30px;
   text-align: center;
@@ -208,13 +207,14 @@ const AnswerBtn1Long = styled.button`
 `;
 const AnswerBtn2Long = styled.button`
   width: 400px;
+  height: 40px;
   margin-right: 30px;
   margin-top: 20px;
   text-align: center;
   margin: 10px 10px;
   border: 1px solid #799edc;
   border-radius: 30px;
-  padding: 15px;
+  padding: auto 0;
   color: #407bf0;
   color: ${(props) => (props.clicked ? " white" : "#407bf0")};
   background-color: ${(props) => (props.clicked ? " #407bf0" : "white")};

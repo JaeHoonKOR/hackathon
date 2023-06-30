@@ -10,7 +10,8 @@ const LoginPage = () => {
     const email = e.target.elements.id.value;
     const password = e.target.elements.pw.value;
     try {
-      await MemberApi.logIn({ email, password });
+      const response = await MemberApi.logIn({ email, password });
+      localStorage.setItem("token", response.data.token);
       navigate("/main");
     } catch (err) {
       alert(`${err.response.data.message}`);

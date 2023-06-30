@@ -47,7 +47,7 @@ const Test = ({ setArray }) => {
           <S.Title> 나는 어떤 성향일까? 🧐</S.Title>
           <S.Container>
             <S.QuestionWrapper>
-              {data[0]?.question.slice(0, 7)}
+              {data[0]?.question.slice(0, 8)}
               <BoldText>{data[0]?.question.slice(8, 55)}</BoldText>
               {data[0]?.question.slice(55)}
             </S.QuestionWrapper>
@@ -69,8 +69,8 @@ const Test = ({ setArray }) => {
           <S.Container>
             <S.QuestionWrapper>
               {data[1]?.question.slice(0, 13)}
-              <BoldText>{data[1]?.question.slice(8, 36)}</BoldText>
-              {data[1]?.question.slice(36)}
+              <BoldText>{data[1]?.question.slice(8, 38)}</BoldText>
+              {data[1]?.question.slice(38)}
             </S.QuestionWrapper>
             <S.BtnWrapper>
               <S.AnswerBtn1
@@ -90,11 +90,9 @@ const Test = ({ setArray }) => {
 
           <S.Container>
             <S.QuestionWrapper>
-              {data[2]?.question.slice(0, 56)}
-              <BoldText>{data[2]?.question.slice(56, 66)}</BoldText>
-              {data[2]?.question.slice(66, 78)}
-              <BoldText>{data[2]?.question.slice(78, 93)}</BoldText>
-              {data[2]?.question.slice(93)}
+              {data[2]?.question.slice(0, 29)}
+              <BoldText>{data[2]?.question.slice(29, 66)}</BoldText>
+              {data[2]?.question.slice(66)}
             </S.QuestionWrapper>
             <S.BtnWrapper>
               <S.AnswerBtn1
@@ -114,8 +112,8 @@ const Test = ({ setArray }) => {
 
           <S.Container>
             <S.QuestionWrapper>
-              {data[3]?.question.slice(0, 16)}
-              <BoldText>{data[3]?.question.slice(16, 36)}</BoldText>
+              {data[3]?.question.slice(0, 8)}
+              <BoldText>{data[3]?.question.slice(8, 36)}</BoldText>
               {data[3]?.question.slice(36)}
             </S.QuestionWrapper>
             <S.BtnWrapperLong>
@@ -180,7 +178,7 @@ const BtnWrapper = styled.div`
 
 const AnswerBtn1 = styled.button`
   width: 400px;
-  height: 30px;
+  height: 35px;
   font-size: 12px;
   margin: auto 10px;
   margin-right: 20px;
@@ -194,7 +192,7 @@ const AnswerBtn1 = styled.button`
 `;
 const AnswerBtn2 = styled.button`
   width: 400px;
-  height: 30px;
+  height: 35px;
   font-size: 12px;
   text-align: center;
   margin-right: 30px;
@@ -219,8 +217,6 @@ const AnswerBtn1Long = styled.button`
   width: 400px;
   height: 30px;
   font-size: 12px;
-  margin: auto 10px;
-  margin-right: 20px;
   border: 1px solid #799edc;
   border-radius: 30px;
   text-align: center;
@@ -235,7 +231,7 @@ const AnswerBtn2Long = styled.button`
   margin-right: 30px;
   margin-top: 20px;
   text-align: center;
-  margin: 10px 10px;
+  margin: 10px auto;
   border: 1px solid #799edc;
   border-radius: 30px;
   padding: 15px;

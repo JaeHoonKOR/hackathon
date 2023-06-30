@@ -5,14 +5,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 import Test from "./Tests/test1";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Test2 from "./Tests/test2";
 import Test3 from "./Tests/test3";
 import Test4 from "./Tests/test4";
 import Test5 from "./Tests/test5";
-import Test6 from "./Tests/test6";
 import { arrayState } from "../Atom/atom";
 import { useRecoilState } from "recoil";
+import LastPage from "./Tests/lastPage";
+import Test6 from "./Tests/test6";
 
 const TestPage = () => {
   const [data, setData] = useState();
@@ -20,7 +21,7 @@ const TestPage = () => {
   const pageNum = Number(page);
   const navigate = useNavigate();
   const onClickNext = () => {
-    navigate(`/test/${pageNum + 1}`);
+    pageNum < 7 && navigate(`/test/${pageNum + 1}`);
   };
   const [array, setArray] = useRecoilState(arrayState);
   return (
@@ -32,9 +33,10 @@ const TestPage = () => {
       {pageNum === 4 && <Test4 setArray={setArray} />}
       {pageNum === 5 && <Test5 setArray={setArray} />}
       {pageNum === 6 && <Test6 setArray={setArray} />}
+      {pageNum > 6 && <LastPage />}
 
       {data && pageNum === 8 && <Test />}
-      {page != 0 && (
+      {page != 0 && pageNum < 7 && (
         <S.NextPageBtn onClick={onClickNext}>
           <S.BtnWord>다음 단계로 이동</S.BtnWord>
           <FontAwesomeIcon icon={faArrowRight} />
@@ -48,7 +50,7 @@ export default TestPage;
 
 const Wrapper = styled.div`
   width: 80%;
-  height: 450px;
+  height: 560px;
   margin: 0 auto;
   padding-top: 30px;
   border: 1px solid #407bf0;

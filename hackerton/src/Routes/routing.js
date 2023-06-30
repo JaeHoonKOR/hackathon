@@ -8,6 +8,7 @@ import ErrorPage from "../Pages/Error";
 import LayOut from "../Components/Layout";
 import MainPage from "../Pages/Main";
 import MyPage from "../Pages/MyPage";
+import RecommendPage from "../Pages/Recommend";
 
 const router = createBrowserRouter([
   // {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "my",
         element: <MyPage />,
+      },
+      {
+        path: "recommend",
+        element: <RecommendPage />,
       },
     ],
   },

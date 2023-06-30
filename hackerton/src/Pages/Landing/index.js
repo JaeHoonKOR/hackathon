@@ -68,21 +68,18 @@ const Title = styled.div`
 const Description1 = styled.div`
   margin-top: 10px;
   font-size: 30px;
-  color: #407bf0;
-  opacity: 0.7;
+  color: #4e61c2;
 `;
 const Description2 = styled.div`
-  margin-top: 10px;
+  margin-top: 0.5px;
   font-size: 30px;
-  color: #407bf0;
-  opacity: 0.4;
+  color: #4e61c2;
 `;
 const Description3 = styled.div`
-  margin-top: 10px;
+  margin-top: 0.5px;
   font-size: 30px;
   color: #407bf0;
   margin-bottom: 50px;
-  opacity: 0.2;
 `;
 const TestBtn = styled.div`
   width: 300px;
@@ -119,7 +116,6 @@ const PhotoWrapper = styled.div`
   outline: 1px solid #5a70e0;
   border-radius: 250px;
   margin: 0 auto;
-
   overflow: hidden;
 `;
 const Photo = styled.img`

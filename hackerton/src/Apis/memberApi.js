@@ -10,10 +10,6 @@ const MemberApi = {
     });
   },
 
-  logOut() {
-    return Axios.get(PATH + "/logout");
-  },
-
   signUp({ email, password, name }) {
     return Axios.post(PATH + "/member/signup", {
       email: email,

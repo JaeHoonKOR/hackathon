@@ -11,5 +11,10 @@ const QuestionApi = {
       },
     });
   },
+  submit({ answers }) {
+    return Axios.post(PATH + "/questionnaire/submit", {
+      answers,
+    });
+  },
 };
 export default QuestionApi;

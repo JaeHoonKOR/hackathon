@@ -29,7 +29,7 @@ const Header = () => {
     <S.Wrapper>
       <S.Logos onClick={goMain}>
         <S.Logo src="/Assets/zbti.jpg" alt="로고 이미지"></S.Logo>
-        <S.TextLogo src="/Assets/zbtiText.jpg" alt="로고 이미지"></S.TextLogo>
+        <S.TextLogo src="/Assets/zbti typo.png" alt="로고 이미지"></S.TextLogo>
       </S.Logos>
 
       <S.MyPage>
@@ -51,7 +51,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: 50px;
 `;
 
@@ -60,12 +60,13 @@ const Logos = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 100px;
+  width: 75px;
+  margin-right: 5px;
 `;
 
 const TextLogo = styled.img`
   width: 80px;
-  height: 20px;
+  height: 25px;
   margin: auto 0;
 `;
 

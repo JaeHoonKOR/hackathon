@@ -194,7 +194,6 @@ const AnswerBtn1Long = styled.button`
   height: 35px;
   font-size: 12px;
   margin: auto 10px;
-  margin-right: 20px;
   border: 1px solid #799edc;
   border-radius: 30px;
   text-align: center;

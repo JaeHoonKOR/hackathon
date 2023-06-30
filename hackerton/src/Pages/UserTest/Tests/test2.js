@@ -15,7 +15,6 @@ const Test2 = ({ setArray }) => {
         console.log(error);
       });
   }, []);
-  data && console.log(data);
 
   const clickBtn1 = (idx) => {
     const updatedClickedBtns = [...clickedBtns];
@@ -46,7 +45,11 @@ const Test2 = ({ setArray }) => {
         <>
           <S.Title> 나는 어떤 성향일까? 🧐</S.Title>
           <S.Container>
-            <S.QuestionWrapper>{data && data[0]?.question}</S.QuestionWrapper>
+            <S.QuestionWrapper>
+              {data[0]?.question.slice(0, 8)}
+              <BoldText>{data[0]?.question.slice(8, 36)}</BoldText>
+              {data[0]?.question.slice(36)}
+            </S.QuestionWrapper>
             <S.BtnWrapper>
               <S.AnswerBtn1
                 clicked={clickedBtns[0]}
@@ -64,7 +67,11 @@ const Test2 = ({ setArray }) => {
           </S.Container>
 
           <S.Container>
-            <S.QuestionWrapper>{data[1]?.question}</S.QuestionWrapper>
+            <S.QuestionWrapper>
+              {data[1]?.question.slice(0, 14)}
+              <BoldText>{data[1]?.question.slice(14, 44)}</BoldText>
+              {data[1]?.question.slice(44)}
+            </S.QuestionWrapper>
             <S.BtnWrapper>
               <S.AnswerBtn1
                 clicked={clickedBtns[1]}
@@ -82,7 +89,11 @@ const Test2 = ({ setArray }) => {
           </S.Container>
 
           <S.Container>
-            <S.QuestionWrapper>{data[2]?.question}</S.QuestionWrapper>
+            <S.QuestionWrapper>
+              {data[2]?.question.slice(0, 11)}
+              <BoldText>{data[2]?.question.slice(11, 30)}</BoldText>
+              {data[2]?.question.slice(30)}
+            </S.QuestionWrapper>
             <S.BtnWrapper>
               <S.AnswerBtn1
                 clicked={clickedBtns[2]}
@@ -100,7 +111,11 @@ const Test2 = ({ setArray }) => {
           </S.Container>
 
           <S.Container>
-            <S.QuestionWrapper>{data[3]?.question}</S.QuestionWrapper>
+            <S.QuestionWrapper>
+              {data[3]?.question.slice(0, 3)}
+              <BoldText>{data[3]?.question.slice(3, 11)}</BoldText>
+              {data[3]?.question.slice(11)}
+            </S.QuestionWrapper>
             <S.BtnWrapperLong>
               <S.AnswerBtn1Long
                 clicked={clickedBtns[3]}
@@ -123,6 +138,9 @@ const Test2 = ({ setArray }) => {
 };
 
 export default Test2;
+const BoldText = styled.span`
+  font-weight: 800;
+`;
 
 const Wrapper = styled.div`
   width: 100%;
@@ -142,7 +160,6 @@ const Container = styled.div`
 const QuestionWrapper = styled.div`
   width: 40%;
   color: #407bf0;
-  display: flex;
   font-size: 14px;
 `;
 const BtnWrapper = styled.div`
@@ -198,7 +215,6 @@ const AnswerBtn1Long = styled.button`
   height: 35px;
   font-size: 12px;
   margin: auto 10px;
-  margin-right: 20px;
   border: 1px solid #799edc;
   border-radius: 30px;
   text-align: center;
@@ -209,13 +225,14 @@ const AnswerBtn1Long = styled.button`
 `;
 const AnswerBtn2Long = styled.button`
   width: 400px;
+  height: 35px;
   margin-right: 30px;
   margin-top: 20px;
   text-align: center;
   margin: 10px 10px;
   border: 1px solid #799edc;
   border-radius: 30px;
-  padding: 15px;
+  padding: auto 0;
   background-color: white;
   cursor: pointer;
   color: ${(props) => (props.clicked ? " white" : "#407bf0")};

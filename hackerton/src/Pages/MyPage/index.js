@@ -1,6 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 const MyPage = () => {
+  const navigate = useNavigate();
+  const goTest = () => {
+    navigate("/test/0");
+  };
   return (
     <S.Wrapper>
       <S.PhotoWrapper>
@@ -9,7 +13,7 @@ const MyPage = () => {
       <S.ButtonWrapper>
         <S.Title>ZBTI</S.Title>
         <S.Description>나의 투자 성향 테스트</S.Description>
-        <S.TestBtn>테스트 하러 가기!</S.TestBtn>
+        <S.TestBtn onClick={goTest}>테스트 하러 가기!</S.TestBtn>
       </S.ButtonWrapper>
     </S.Wrapper>
   );
